@@ -23,7 +23,7 @@ export class SurveyOverviewComponent implements OnInit {
     const encoded: string = btoa(JSON.stringify(this.criterias))
     console.log(encoded);
     console.log(atob(encoded))
-    const link = `${location.origin}/prioritizing/${encoded}`
+    const link = `${location.origin}/survey/${encoded}`
     this.clipboard.copy(link);
     this.buttonText = "Link Copied!";
   }

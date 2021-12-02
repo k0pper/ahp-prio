@@ -8,7 +8,8 @@ import { CriteriaQuantityComponent } from './criteria-quantity/criteria-quantity
 import { CriteriaNamesComponent } from './criteria-names/criteria-names.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SurveyOverviewComponent } from './survey-overview/survey-overview.component';
-import { PrioritizingComponent } from './prioritizing/prioritizing.component';
+import { PrioritizingIntroduction } from './prioritizing-introduction/prioritizing-introduction.component';
+import { PrioritizeComponent } from './prioritize/prioritize.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PrioritizingComponent } from './prioritizing/prioritizing.component';
     CriteriaQuantityComponent,
     CriteriaNamesComponent,
     SurveyOverviewComponent,
-    PrioritizingComponent
+    PrioritizingIntroduction,
+    PrioritizeComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CriteriaNamesComponent } from './criteria-names/criteria-names.component';
 import { CriteriaQuantityComponent } from './criteria-quantity/criteria-quantity.component';
-import { PrioritizingComponent } from './prioritizing/prioritizing.component';
+import { PrioritizeComponent } from './prioritize/prioritize.component';
+import { PrioritizingIntroduction } from './prioritizing-introduction/prioritizing-introduction.component';
 import { SurveyOverviewComponent } from './survey-overview/survey-overview.component';
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
   {path: "quantity", component: CriteriaQuantityComponent},
   {path: "criterias", component: CriteriaNamesComponent},
   {path: "overview", component: SurveyOverviewComponent},
-  {path: "prioritizing/:encodedSurvey", component: PrioritizingComponent},
+  {path: "survey/:encodedSurvey", component: PrioritizingIntroduction},
+  {path: "prioritizing", component: PrioritizeComponent},
 ];
 
 @NgModule({

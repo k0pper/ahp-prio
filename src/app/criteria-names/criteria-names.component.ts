@@ -34,7 +34,7 @@ export class CriteriaNamesComponent implements OnInit {
 
 
   onCreateSurvey() {
-   this.ss.addCriterias(this.criterias.value);
+   this.ss.setCriterias(this.criterias.value);
    console.log(this.ss.getCriterias());
    this.router.navigate(["overview"]);
   }

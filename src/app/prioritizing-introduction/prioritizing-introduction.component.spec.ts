@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrioritizingComponent } from './prioritizing.component';
+import { PrioritizingIntroduction } from './prioritizing-introduction.component';
 
 describe('PrioritizingComponent', () => {
-  let component: PrioritizingComponent;
-  let fixture: ComponentFixture<PrioritizingComponent>;
+  let component: PrioritizingIntroduction;
+  let fixture: ComponentFixture<PrioritizingIntroduction>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PrioritizingComponent ]
+      declarations: [ PrioritizingIntroduction ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PrioritizingComponent);
+    fixture = TestBed.createComponent(PrioritizingIntroduction);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

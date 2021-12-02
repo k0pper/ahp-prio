@@ -1,0 +1,31 @@
+
+  <div class="flex max-w-3xl flex-col bg-white rounded p-6 space-y-4">
+
+    <div class="w-full mb-4">
+        <h2 class="text-xl font-bold mb-1">Danke fürs Bewerten beim AHP-Priorisierungsprozess!</h2>
+        <p class="mb-3">Alle unten aufgelisteten Anforderungen werden in den folgenden Schritten paarweise präsentiert. Ihre Aufgabe ist es, diese Anforderungen gegenseitig abzuwägen und zu entscheiden, welche wichtiger ist. 
+                        Dabei vergeben Sie einen Wert zwischen 1 bis 9. 1 Bedeutet, die Anforderungen sind gleich wichtig. 9 beudetet, dass die erste Anforderung eine absolut dominierende Bedeutung im Vergleich zur anderen Anforderung hat.
+                        Dabei gibt es auch immer die passenden Gegenwerte (1/2, 1/3, ... 1/9). Die Vergleiche sind als Skala präsentiert, es ist also einfacher, als es klingt.</p>
+        <div class="flex flex-col gap-1">
+            <div class="flex flex-row w-full" *ngFor="let criteria of criterias; let i = index">
+                <div class="w-1/4">
+                    <b>Criteria {{i+1}}</b>:
+                </div>
+
+                <div class="w-3/4 flex flex-nowrap flex-row">
+                    <div class="flex flex-wrap">
+                        {{criteria.name}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-row w-full mb-4">
+        <button class="w-full py-4 bg-dmBlue hover:bg-dmBlueAccent rounded text-sm font-bold text-gray-50 transition duration-200" (click)="onStart()">
+            Priorisierung Starten
+        </button>
+    </div>
+    
+</div>
