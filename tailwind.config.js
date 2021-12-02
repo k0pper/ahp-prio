@@ -12,6 +12,9 @@ module.exports = {
       }
     },
   },
+  purge: [
+    './src/**/*.html',
+  ],
   variants: {
     extend: {},
   },
