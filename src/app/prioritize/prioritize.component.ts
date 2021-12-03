@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Comparison } from '../model/Comparison';
 import { SurveyService } from '../service/survey-service.service';
 
@@ -12,24 +13,35 @@ export class PrioritizeComponent implements OnInit {
   comparison: Comparison = { requirementA: {name : ""}, requirementB: {name : ""} };
 
   form = this.fb.group({
-    result: ['']
+    result: ['', Validators.required]
   });
 
-  constructor(private ss: SurveyService, private fb: FormBuilder) { }
+  constructor(private ss: SurveyService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.comparison = this.ss.getRandomUnusedComparison();
+    if (!this.comparison) {
+      this.router.navigate(['/'])
+    }
   }
 
   next() {
-    console.log(this.form.value);
     this.comparison.result = this.form.value.result;
-    console.log(this.comparison);
+    this.comparison = this.ss.removeAndGetNextRandomComparison(this.comparison);
+    this.form.reset();
+    if (this.ss.getUnusedComparisons().length == 0) {
+      console.log("Done! Result:", this.ss.getUsedComparisons());
+      this.router.navigate(['/result']);
+      return;
+    }
+  }
 
-    // TODO: 
-    //    1. Remove Comparison from comparisons array in Service
-    //    2. Add Comparison to Comparison Done array in Service
-    //    3. Load new Comparison into this component
+  totalNumberOfComparisons() {
+    return this.ss.getUnusedComparisons().length + this.ss.getUsedComparisons().length;
+  }
+
+  numberOfUsedComparisons() {
+    return this.ss.getUsedComparisons().length;
   }
 
 

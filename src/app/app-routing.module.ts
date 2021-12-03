@@ -4,6 +4,7 @@ import { CriteriaNamesComponent } from './criteria-names/criteria-names.componen
 import { CriteriaQuantityComponent } from './criteria-quantity/criteria-quantity.component';
 import { PrioritizeComponent } from './prioritize/prioritize.component';
 import { PrioritizingIntroduction } from './prioritizing-introduction/prioritizing-introduction.component';
+import { ResultComponent } from './result/result.component';
 import { SurveyOverviewComponent } from './survey-overview/survey-overview.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: "overview", component: SurveyOverviewComponent},
   {path: "survey/:encodedSurvey", component: PrioritizingIntroduction},
   {path: "prioritizing", component: PrioritizeComponent},
+  {path: "result", component: ResultComponent},
 ];
 
 @NgModule({

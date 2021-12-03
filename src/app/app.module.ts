@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SurveyOverviewComponent } from './survey-overview/survey-overview.component';
 import { PrioritizingIntroduction } from './prioritizing-introduction/prioritizing-introduction.component';
 import { PrioritizeComponent } from './prioritize/prioritize.component';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PrioritizeComponent } from './prioritize/prioritize.component';
     CriteriaNamesComponent,
     SurveyOverviewComponent,
     PrioritizingIntroduction,
-    PrioritizeComponent
+    PrioritizeComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

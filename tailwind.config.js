@@ -16,7 +16,10 @@ module.exports = {
     './src/**/*.html',
   ],
   variants: {
-    extend: {},
+    extend: {
+      opacity: ['disabled'],
+      cursor: ['disabled'],
+    },
   },
   plugins: [],
 }
