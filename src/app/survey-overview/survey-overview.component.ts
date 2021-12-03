@@ -20,9 +20,9 @@ export class SurveyOverviewComponent implements OnInit {
   }
 
   onCopyLink() {
-    const encoded: string = btoa(JSON.stringify(this.criterias))
+    const encoded: string = encodeURIComponent(JSON.stringify(this.criterias))
     console.log(encoded);
-    console.log(atob(encoded))
+    console.log(decodeURIComponent(encoded))
     const link = `${location.origin}/survey/${encoded}`
     this.clipboard.copy(link);
     this.buttonText = "Link kopiert!";

@@ -18,7 +18,7 @@ export class PrioritizingIntroduction implements OnInit {
   ngOnInit(): void {
     const encoded = this.route.snapshot.paramMap.get('encodedSurvey');
     if (encoded) {
-      this.decodedData = atob(encoded);
+      this.decodedData = decodeURIComponent(encoded);
     }
     this.criterias = JSON.parse(this.decodedData) as Criteria[];
     this.ss.setCriterias(this.criterias);
