@@ -5,8 +5,8 @@
     <div class="flex flex-col bg-white rounded p-6 space-y-4">
 
         <div class="w-full mb-4">
-            <h2 class="text-xl font-bold">Name your Criteria</h2>
-            <p>Create a Survey with {{quantity}} Criteria</p>
+            <h2 class="text-xl font-bold">Gib deinen Anforderungen Namen</h2>
+            <p>Deine Umfrage hat {{quantity}} Anforderungen</p>
         </div>
 
 
@@ -21,8 +21,9 @@
         </div>
 
         <div class="w-full mb-4">
-            <button class="w-full py-4 bg-dmBlue hover:bg-dmBlueAccent rounded text-sm font-bold text-gray-50 transition duration-200" (click)="onCreateSurvey()">
-                Create Survey
+            <button class="w-full py-4 bg-dmBlue hover:bg-dmBlueAccent rounded text-sm font-bold text-gray-50 transition duration-200" (click)="onCreateSurvey()"
+                [disabled]="!isValid()">
+                Umfrage erstellen
             </button>
         </div>
 

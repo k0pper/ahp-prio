@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Criteria } from '../model/Criteria';
 import { SurveyService } from '../service/survey-service.service';
 
 @Component({
@@ -50,6 +51,14 @@ export class CriteriaNamesComponent implements OnInit {
       name: [''],
   });
   this.criterias.push(criteriaForm);
+  }
+
+  isValid() {
+    let isValid = true;
+    this.criterias.value.forEach((criteria: Criteria) => {
+      if (!criteria.name) isValid = false;
+    });
+    return isValid;
   }
 
 

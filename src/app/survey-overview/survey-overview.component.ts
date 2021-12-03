@@ -11,7 +11,7 @@ import { ClipboardService } from 'ngx-clipboard'
 })
 export class SurveyOverviewComponent implements OnInit {
   criterias: Criteria[] = []
-  buttonText: string = "Copy Survey Link";
+  buttonText: string = "Link zur Umfrage kopieren";
 
   constructor(private ss: SurveyService, private clipboard: ClipboardService) { }
 
@@ -25,7 +25,7 @@ export class SurveyOverviewComponent implements OnInit {
     console.log(atob(encoded))
     const link = `${location.origin}/survey/${encoded}`
     this.clipboard.copy(link);
-    this.buttonText = "Link Copied!";
+    this.buttonText = "Link kopiert!";
   }
 
 }
